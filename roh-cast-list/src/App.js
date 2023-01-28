@@ -2,7 +2,7 @@ import CastList from "./Components/CastList";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <CastList />
     </div>
   );
