@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react';
 import { useState } from 'react';
 import "../index.css";
 
@@ -13,7 +14,7 @@ export default function CastList() {
     const [castMembers, setCastMembers] = useState([]);
    
    
-    async function getCastData ()  {
+    const  getCastData = ()  => {
         fetch(
             `https://www.roh.org.uk/api/event-details?slug=turandot-by-andrei-serban`
         )
@@ -22,19 +23,13 @@ export default function CastList() {
                 setCastList(data);
                 setCreatives(data.included);
                 setCastMembers(data.included);
-             
-                console.log(data);
                 
             });
       
     }
-
-
-
-
-
-    
-
+    useEffect(() => {
+     getCastData()
+ }, [])
 
     const filteredCreatives = creatives.filter(
         (item) => item.type === "creatives");
