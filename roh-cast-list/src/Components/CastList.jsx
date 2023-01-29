@@ -38,13 +38,11 @@ export default function CastList() {
 
   return (
     <div>
-      <div>
-        <div>
-          {/* Basic Layout of page with placeholders */}
-
+      <div className="production-data">
+        <div className="production-data-list">
           <h1>{attributes.title}</h1>
           <p>Date: 10/03/2023</p>
-                  <p dangerouslySetInnerHTML={{__html:attributes.shortDescription}} /> 
+            <p dangerouslySetInnerHTML={{__html:attributes.shortDescription}} /> 
 
           <h1>Creatives</h1>
           {filteredCreatives.map((creator) => (
