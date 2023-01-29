@@ -20,7 +20,6 @@ export default function CastList() {
         setCreatives(data.included);
         setCastMembers(data.included);
         setAttributes(data.data.attributes);
-        console.log(data.data.attributes);
       })
       .catch((err) => console.log(err));
   }
@@ -28,8 +27,6 @@ export default function CastList() {
     getCastData();
   }, []);
 
-  // const { data } = castList;
-  // console.log(data)
 
   const filteredCreatives = creatives.filter(
     (item) => item.type === "creatives"
@@ -39,16 +36,15 @@ export default function CastList() {
     (item) => item.type === "castRoles"
   );
 
-  // console.log({castList, id:castList.data.id})
   return (
     <div>
       <div>
         <div>
           {/* Basic Layout of page with placeholders */}
 
-          <h1>Title:{attributes.title}</h1>
+          <h1>{attributes.title}</h1>
           <p>Date: 10/03/2023</p>
-                  Description:{ attributes.shortDescription}
+                  <p dangerouslySetInnerHTML={{__html:attributes.shortDescription}} /> 
 
           <h1>Creatives</h1>
           {filteredCreatives.map((creator) => (
