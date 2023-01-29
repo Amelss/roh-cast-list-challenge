@@ -50,7 +50,7 @@ export default function CastList() {
           {filteredCreatives.map((creator) => (
             <div key={creator.id}>
               <p>
-                {creator.attributes.name} - {creator.attributes.role}
+                {creator.attributes.role} - {creator.attributes.name}
               </p>
             </div>
           ))}
@@ -58,12 +58,10 @@ export default function CastList() {
           {filteredCastMembers.map((cast) => (
             <div key={cast.id}>
               <p>
-                {cast.attributes.name} - {cast.attributes.role}
+                {cast.attributes.role} - {cast.attributes.name}
               </p>
             </div>
           ))}
-
-          <p>Cast Names and Roles:</p>
         </div>
       </div>
     </div>
